@@ -29,7 +29,7 @@ public interface RuserDao {
      */
     List<Ruser> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
 
-
+    Ruser login(@Param("loginname") String loginname,@Param("pwd") String pwd);
     /**
      * 通过实体作为筛选条件查询
      *

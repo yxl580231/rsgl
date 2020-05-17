@@ -42,6 +42,11 @@ public class RuserServiceImpl implements RuserService {
         return this.ruserDao.queryAllByLimit(offset, limit);
     }
 
+    @Override
+    public Ruser login(String loginname, String pwd) {
+        return this.ruserDao.login(loginname,pwd);
+    }
+
     /**
      * 新增数据
      *

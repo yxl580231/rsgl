@@ -73,4 +73,15 @@ public class Ruser implements Serializable {
         this.createdate = createdate;
     }
 
+    @Override
+    public String toString() {
+        return "Ruser{" +
+                "uid=" + uid +
+                ", username='" + username + '\'' +
+                ", loginname='" + loginname + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", ustatus=" + ustatus +
+                ", createdate=" + createdate +
+                '}';
+    }
 }

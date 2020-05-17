@@ -2,6 +2,7 @@ package com.controller;
 
 import com.entity.Ruser;
 import com.service.RuserService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -12,7 +13,7 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2020-05-15 17:41:20
  */
-@RestController
+@Controller
 @RequestMapping("ruser")
 public class RuserController {
     /**
@@ -30,6 +31,12 @@ public class RuserController {
     @GetMapping("selectOne")
     public Ruser selectOne(Integer id) {
         return this.ruserService.queryById(id);
+    }
+
+    @RequestMapping("login")
+    public String login(String loginname,String pwd){
+        System.out.println(this.ruserService.login(loginname,pwd).toString());
+        return "hello";
     }
 
 }

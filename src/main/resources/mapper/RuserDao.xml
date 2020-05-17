@@ -19,6 +19,10 @@
         where uid = #{uid}
     </select>
 
+    <select id="login" resultMap="RuserMap">
+        select uid, username, loginname, pwd, ustatus, createDate from ruser where loginname=#{loginname} and pwd=#{pwd}
+    </select>
+
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="RuserMap">
         select

@@ -1,6 +1,7 @@
 package com.service;
 
 import com.entity.Ruser;
+
 import java.util.List;
 
 /**
@@ -28,6 +29,7 @@ public interface RuserService {
      */
     List<Ruser> queryAllByLimit(int offset, int limit);
 
+    Ruser login(String loginname,String pwd);
     /**
      * 新增数据
      *

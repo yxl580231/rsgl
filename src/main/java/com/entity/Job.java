@@ -1,5 +1,7 @@
 package com.entity;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -8,6 +10,7 @@ import java.io.Serializable;
  * @author makejava
  * @since 2020-05-15 17:40:34
  */
+@Data
 public class Job implements Serializable {
     private static final long serialVersionUID = -80825907229912083L;
     
@@ -16,30 +19,5 @@ public class Job implements Serializable {
     private String jname;
     
     private String remark;
-
-
-    public Integer getJid() {
-        return jid;
-    }
-
-    public void setJid(Integer jid) {
-        this.jid = jid;
-    }
-
-    public String getJname() {
-        return jname;
-    }
-
-    public void setJname(String jname) {
-        this.jname = jname;
-    }
-
-    public String getRemark() {
-        return remark;
-    }
-
-    public void setRemark(String remark) {
-        this.remark = remark;
-    }
 
 }

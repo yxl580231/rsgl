@@ -14,7 +14,19 @@
         <result property="sex" column="sex" jdbcType="INTEGER"/>
         <result property="education" column="education" jdbcType="VARCHAR"/>
         <result property="createdate" column="createDate" jdbcType="TIMESTAMP"/>
+        <association property="dept" javaType="com.entity.Dept">
+            <id property="did" column="dept_id"></id>
+            <result property="dname" column="dname"></result>
+        </association>
+        <association property="job" javaType="com.entity.Job">
+            <id property="jid" column="job_id"></id>
+            <result property="jname" column="jname"></result>
+        </association>
     </resultMap>
+
+    <sql id="emp_column">
+        eid, dept_id, job_id, ename, cardId, address, phone, email, sex, education, createDate
+    </sql>
 
     <!--查询单个-->
     <select id="queryById" resultMap="EmployeeMap">
@@ -35,43 +47,11 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="EmployeeMap">
         select
-          eid, dept_id, job_id, ename, cardId, address, phone, email, sex, education, createDate
-        from rsgl.employee
-        <where>
-            <if test="eid != null">
-                and eid = #{eid}
-            </if>
-            <if test="deptId != null">
-                and dept_id = #{deptId}
-            </if>
-            <if test="jobId != null">
-                and job_id = #{jobId}
-            </if>
-            <if test="ename != null and ename != ''">
-                and ename = #{ename}
-            </if>
-            <if test="cardid != null and cardid != ''">
-                and cardId = #{cardid}
-            </if>
-            <if test="address != null and address != ''">
-                and address = #{address}
-            </if>
-            <if test="phone != null and phone != ''">
-                and phone = #{phone}
-            </if>
-            <if test="email != null and email != ''">
-                and email = #{email}
-            </if>
-            <if test="sex != null and sex != ''">
-                and sex = #{sex}
-            </if>
-            <if test="education != null and education != ''">
-                and education = #{education}
-            </if>
-            <if test="createdate != null">
-                and createDate = #{createdate}
-            </if>
-        </where>
+        <include refid="emp_column"></include>
+        ,dname,jname
+        from employee
+        inner join dept on employee.dept_id=dept.did
+        inner join job on employee.job_id=job.jid
     </select>
 
     <!--新增所有列-->

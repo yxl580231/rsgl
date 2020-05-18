@@ -22,11 +22,11 @@ public interface EmployeeService {
     /**
      * 查询多条数据
      *
-     * @param offset 查询起始位置
-     * @param limit 查询条数
+     * @param pageNum 查询页码数
+     * @param pageSize 查询条数
      * @return 对象列表
      */
-    List<Employee> queryAllByLimit(int offset, int limit);
+    List<Employee> queryAll(int pageNum, int pageSize);
 
     /**
      * 新增数据

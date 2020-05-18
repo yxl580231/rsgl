@@ -25,6 +25,6 @@ public class Ruser implements Serializable {
     
     private Integer ustatus;
     
-    private Date createdate;
+    private String createdate;
 
 }

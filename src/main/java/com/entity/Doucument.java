@@ -23,7 +23,7 @@ public class Doucument implements Serializable {
     
     private String remark;
     
-    private Date createdate;
+    private String createdate;
     
     private Integer userId;
 

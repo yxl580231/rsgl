@@ -24,6 +24,11 @@
             </bean>
         </property>
         <property name="typeAliasesPackage" value="com.entity"></property>
+        <property name="plugins">
+            <array>
+                <bean class="com.github.pagehelper.PageInterceptor"></bean>
+            </array>
+        </property>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

@@ -2,6 +2,7 @@ package com.service.impl;
 
 import com.entity.Employee;
 import com.dao.EmployeeDao;
+import com.github.pagehelper.PageHelper;
 import com.service.EmployeeService;
 import org.springframework.stereotype.Service;
 
@@ -33,13 +34,14 @@ public class EmployeeServiceImpl implements EmployeeService {
     /**
      * 查询多条数据
      *
-     * @param offset 查询起始位置
-     * @param limit 查询条数
+     * @param pageNum 查询页码数
+     * @param pageSize 查询条数
      * @return 对象列表
      */
     @Override
-    public List<Employee> queryAllByLimit(int offset, int limit) {
-        return this.employeeDao.queryAllByLimit(offset, limit);
+    public List<Employee> queryAll(int pageNum, int pageSize) {
+        PageHelper.startPage(pageNum,pageSize);
+        return this.employeeDao.queryAll(new Employee());
     }
 
     /**

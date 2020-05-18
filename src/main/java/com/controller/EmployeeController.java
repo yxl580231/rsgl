@@ -1,7 +1,9 @@
 package com.controller;
 
 import com.entity.Employee;
+import com.github.pagehelper.PageInfo;
 import com.service.EmployeeService;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -30,5 +32,12 @@ public class EmployeeController {
     @GetMapping("selectOne")
     public Employee selectOne(Integer id) {
         return this.employeeService.queryById(id);
+    }
+
+    public String selectAll(Model model, @RequestParam(required = false,defaultValue = "1") Integer pageNum,
+                            @RequestParam(required = false,defaultValue = "5")Integer pageSize){
+        PageInfo<Employee> pageInfo = new PageInfo<>(employeeService.queryAll(pageNum,pageSize));
+        model.addAttribute("pageInfo",pageInfo);
+        return "index";
     }
 }

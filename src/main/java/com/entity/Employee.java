@@ -30,7 +30,7 @@ public class Employee implements Serializable {
     
     private String email;
     
-    private String sex;
+    private Integer sex;
     
     private String education;
     

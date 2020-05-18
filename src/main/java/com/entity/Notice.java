@@ -3,6 +3,7 @@ package com.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * (Notice)实体类
@@ -20,7 +21,7 @@ public class Notice implements Serializable {
     
     private String content;
     
-    private String createdate;
+    private Date createdate;
     
     private Integer userId;
 

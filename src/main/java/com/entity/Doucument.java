@@ -3,6 +3,7 @@ package com.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * (Doucument)实体类
@@ -22,7 +23,7 @@ public class Doucument implements Serializable {
     
     private String remark;
     
-    private String createdate;
+    private Date createdate;
     
     private Integer userId;
 

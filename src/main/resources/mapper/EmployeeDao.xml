@@ -11,7 +11,7 @@
         <result property="address" column="address" jdbcType="VARCHAR"/>
         <result property="phone" column="phone" jdbcType="VARCHAR"/>
         <result property="email" column="email" jdbcType="VARCHAR"/>
-        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="INTEGER"/>
         <result property="education" column="education" jdbcType="VARCHAR"/>
         <result property="createdate" column="createDate" jdbcType="TIMESTAMP"/>
     </resultMap>

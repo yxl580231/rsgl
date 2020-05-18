@@ -3,6 +3,7 @@ package com.entity;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * (Ruser)实体类
@@ -24,6 +25,6 @@ public class Ruser implements Serializable {
     
     private Integer ustatus;
     
-    private String createdate;
+    private Date createdate;
 
 }

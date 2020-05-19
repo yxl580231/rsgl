@@ -35,8 +35,10 @@ public class RuserController {
 
     @RequestMapping("login")
     public String login(String loginname,String pwd){
-        System.out.println(this.ruserService.login(loginname,pwd).toString());
-        return "hello";
+        if(ruserService.login(loginname,pwd) != null) {
+            return "back";
+        }
+        return "";
     }
 
 }

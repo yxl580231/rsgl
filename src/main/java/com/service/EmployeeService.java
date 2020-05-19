@@ -1,7 +1,7 @@
 package com.service;
 
+import com.commons.BaseService;
 import com.entity.Employee;
-import java.util.List;
 
 /**
  * (Employee)表服务接口
@@ -9,47 +9,6 @@ import java.util.List;
  * @author makejava
  * @since 2020-05-14 16:55:14
  */
-public interface EmployeeService {
-
-    /**
-     * 通过ID查询单条数据
-     *
-     * @param eid 主键
-     * @return 实例对象
-     */
-    Employee queryById(Integer eid);
-
-    /**
-     * 查询多条数据
-     *
-     * @param pageNum 查询页码数
-     * @param pageSize 查询条数
-     * @return 对象列表
-     */
-    List<Employee> queryAll(int pageNum, int pageSize);
-
-    /**
-     * 新增数据
-     *
-     * @param employee 实例对象
-     * @return 实例对象
-     */
-    Employee insert(Employee employee);
-
-    /**
-     * 修改数据
-     *
-     * @param employee 实例对象
-     * @return 实例对象
-     */
-    Employee update(Employee employee);
-
-    /**
-     * 通过主键删除数据
-     *
-     * @param eid 主键
-     * @return 是否成功
-     */
-    boolean deleteById(Integer eid);
+public interface EmployeeService extends BaseService<Employee> {
 
 }

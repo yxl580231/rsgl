@@ -50,7 +50,7 @@
         <br>
         <div class="row">
             <div class="col">
-                <form method="post" action="/login">
+                <form method="post" action="/ruser/login">
                     <div class="form-group">
                         <label for="textinput">登录账号：</label>
                         <input class="form-control form-control" name="loginname" type="text" id="textinput" placeholder="登录账号"/>

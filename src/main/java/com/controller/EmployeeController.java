@@ -3,6 +3,7 @@ package com.controller;
 import com.entity.Employee;
 import com.github.pagehelper.PageInfo;
 import com.service.EmployeeService;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +15,7 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2020-05-14 16:55:15
  */
-@RestController
+@Controller
 @RequestMapping("employee")
 public class EmployeeController {
     /**
@@ -34,10 +35,11 @@ public class EmployeeController {
         return this.employeeService.queryById(id);
     }
 
+    @RequestMapping("list")
     public String selectAll(Model model, @RequestParam(required = false,defaultValue = "1") Integer pageNum,
                             @RequestParam(required = false,defaultValue = "5")Integer pageSize){
-        PageInfo<Employee> pageInfo = new PageInfo<>(employeeService.queryAll(pageNum,pageSize));
+        PageInfo<Employee> pageInfo = new PageInfo<>(employeeService.queryAll(pageNum,pageSize,new Employee()));
         model.addAttribute("pageInfo",pageInfo);
-        return "index";
+        return "";
     }
 }
